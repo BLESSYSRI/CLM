@@ -1,0 +1,344 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:camunda="http://camunda.org/schema/1.0/bpmn" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:modeler="http://camunda.org/schema/modeler/1.0" id="Definitions_17rkbnp" targetNamespace="http://bpmn.io/schema/bpmn" exporter="Camunda Modeler" exporterVersion="5.9.0" modeler:executionPlatform="Camunda Platform" modeler:executionPlatformVersion="7.18.0">
+  <bpmn:process id="Start" isExecutable="true">
+    <bpmn:startEvent id="StartNewProcess" camunda:formKey="StartNewContract">
+      <bpmn:outgoing>Flow_0ujqt52</bpmn:outgoing>
+    </bpmn:startEvent>
+    <bpmn:userTask id="Activity_14k9ygk" name="VM Review" camunda:assignee="contract">
+      <bpmn:extensionElements>
+        <camunda:formData>
+          <camunda:formField id="Clientname" label="Client name" type="string">
+            <camunda:validation />
+          </camunda:formField>
+          <camunda:formField id="Vendorname" label="VendorName" type="string">
+            <camunda:validation />
+          </camunda:formField>
+          <camunda:formField id="ContractStartDate" label="Contract Start Date" type="string">
+            <camunda:validation />
+          </camunda:formField>
+          <camunda:formField id="ContractEndDate" label="Contract End Date" type="string">
+            <camunda:validation />
+          </camunda:formField>
+          <camunda:formField id="ContractAmount" label="ContractAmount" type="string">
+            <camunda:validation />
+          </camunda:formField>
+          <camunda:formField id="TypeOfContract" label="Type Of Contract" type="string">
+            <camunda:validation />
+          </camunda:formField>
+          <camunda:formField id="ContractNumber" label="Contract Number" type="string">
+            <camunda:validation />
+          </camunda:formField>
+          <camunda:formField id="ContractInitiationStartDate" label="Contract Initiation Start Date" type="string">
+            <camunda:validation />
+          </camunda:formField>
+          <camunda:formField id="StatusOfContract" label="Status Of Contract" type="string">
+            <camunda:validation />
+          </camunda:formField>
+          <camunda:formField id="Approve" label="Are you approve" type="boolean" />
+          <camunda:formField id="VMreviewcomments" label="VM review comments" type="string" />
+          <camunda:formField id="ExpiryDate" label="Expiry Date" type="string">
+            <camunda:validation />
+          </camunda:formField>
+        </camunda:formData>
+      </bpmn:extensionElements>
+      <bpmn:incoming>Flow_1jt295b</bpmn:incoming>
+      <bpmn:incoming>Flow_0ujqt52</bpmn:incoming>
+      <bpmn:outgoing>Flow_1ut9nl2</bpmn:outgoing>
+    </bpmn:userTask>
+    <bpmn:boundaryEvent id="Event_0t25xhl" attachedToRef="Activity_14k9ygk">
+      <bpmn:outgoing>Flow_056fi5v</bpmn:outgoing>
+      <bpmn:timerEventDefinition id="TimerEventDefinition_0o0ymhz">
+        <bpmn:timeDuration xsi:type="bpmn:tFormalExpression">PT15S</bpmn:timeDuration>
+      </bpmn:timerEventDefinition>
+    </bpmn:boundaryEvent>
+    <bpmn:userTask id="Activity_1ax05h0" name="Finance Review" camunda:assignee="contract">
+      <bpmn:extensionElements>
+        <camunda:formData>
+          <camunda:formField id="Clientname" label="Client name" type="string">
+            <camunda:validation>
+              <camunda:constraint name="readonly" />
+            </camunda:validation>
+          </camunda:formField>
+          <camunda:formField id="Vendorname" label="VendorName" type="string">
+            <camunda:validation>
+              <camunda:constraint name="readonly" />
+            </camunda:validation>
+          </camunda:formField>
+          <camunda:formField id="ContractStartDate" label="Contract Start Date" type="string">
+            <camunda:validation>
+              <camunda:constraint name="readonly" />
+            </camunda:validation>
+          </camunda:formField>
+          <camunda:formField id="ContractEndDate" label="Contract End Date" type="string">
+            <camunda:validation>
+              <camunda:constraint name="readonly" />
+            </camunda:validation>
+          </camunda:formField>
+          <camunda:formField id="ContractAmount" label="ContractAmount" type="string">
+            <camunda:validation>
+              <camunda:constraint name="readonly" />
+            </camunda:validation>
+          </camunda:formField>
+          <camunda:formField id="TypeOfContract" label="Type Of Contract" type="string">
+            <camunda:validation>
+              <camunda:constraint name="readonly" />
+            </camunda:validation>
+          </camunda:formField>
+          <camunda:formField id="ContractNumber" label="Contract Number" type="string">
+            <camunda:validation>
+              <camunda:constraint name="readonly" />
+            </camunda:validation>
+          </camunda:formField>
+          <camunda:formField id="ContractInitiationStartDate" label="Contract Initiation Start Date" type="string">
+            <camunda:validation>
+              <camunda:constraint name="readonly" />
+            </camunda:validation>
+          </camunda:formField>
+          <camunda:formField id="StatusOfContract" label="Status Of Contract" type="string">
+            <camunda:validation>
+              <camunda:constraint name="readonly" />
+            </camunda:validation>
+          </camunda:formField>
+          <camunda:formField id="Approve" label="Are you approve" type="boolean">
+            <camunda:validation>
+              <camunda:constraint name="readonly" />
+            </camunda:validation>
+          </camunda:formField>
+          <camunda:formField id="VMreviewcomments" label="VM review comments" type="string">
+            <camunda:validation>
+              <camunda:constraint name="readonly" />
+            </camunda:validation>
+          </camunda:formField>
+          <camunda:formField id="Approved" label="are you approve" type="boolean" />
+          <camunda:formField id="Financereviewcomments" label="Finance review comments" type="string" />
+          <camunda:formField id="ExpiryDate" label="Expiry Date" type="string">
+            <camunda:validation>
+              <camunda:constraint name="readonly" />
+            </camunda:validation>
+          </camunda:formField>
+        </camunda:formData>
+      </bpmn:extensionElements>
+      <bpmn:incoming>Flow_1ut9nl2</bpmn:incoming>
+      <bpmn:incoming>Flow_15qee1g</bpmn:incoming>
+      <bpmn:outgoing>Flow_1qfp16t</bpmn:outgoing>
+    </bpmn:userTask>
+    <bpmn:boundaryEvent id="Event_06vabml" attachedToRef="Activity_1ax05h0">
+      <bpmn:outgoing>Flow_0ksit6d</bpmn:outgoing>
+      <bpmn:timerEventDefinition id="TimerEventDefinition_08ef4kv">
+        <bpmn:timeDuration xsi:type="bpmn:tFormalExpression">PT15S</bpmn:timeDuration>
+      </bpmn:timerEventDefinition>
+    </bpmn:boundaryEvent>
+    <bpmn:sequenceFlow id="Flow_1qfp16t" sourceRef="Activity_1ax05h0" targetRef="Activity_0086jem" />
+    <bpmn:serviceTask id="Activity_0086jem" name="To manipulate the ISO8601 time and date" camunda:class="com.truviq.contract.subtract30days">
+      <bpmn:incoming>Flow_1qfp16t</bpmn:incoming>
+      <bpmn:incoming>Flow_0eomj78</bpmn:incoming>
+      <bpmn:outgoing>Flow_1w5jy6n</bpmn:outgoing>
+    </bpmn:serviceTask>
+    <bpmn:sequenceFlow id="Flow_1w5jy6n" sourceRef="Activity_0086jem" targetRef="Event_1iffevg" />
+    <bpmn:intermediateCatchEvent id="Event_1iffevg">
+      <bpmn:incoming>Flow_1w5jy6n</bpmn:incoming>
+      <bpmn:outgoing>Flow_1pm502p</bpmn:outgoing>
+      <bpmn:timerEventDefinition id="TimerEventDefinition_09vjypo">
+        <bpmn:timeDate xsi:type="bpmn:tFormalExpression">${OneDaylessISO}</bpmn:timeDate>
+      </bpmn:timerEventDefinition>
+    </bpmn:intermediateCatchEvent>
+    <bpmn:userTask id="Activity_1q2nr5z" name="Whether you want to renew or not?" camunda:assignee="contract">
+      <bpmn:extensionElements>
+        <camunda:formData>
+          <camunda:formField id="approve" label="Do you want to Renew this Contract?" type="boolean" />
+        </camunda:formData>
+      </bpmn:extensionElements>
+      <bpmn:incoming>Flow_1pm502p</bpmn:incoming>
+      <bpmn:outgoing>Flow_0i4derr</bpmn:outgoing>
+    </bpmn:userTask>
+    <bpmn:exclusiveGateway id="Gateway_1g83rvo">
+      <bpmn:incoming>Flow_0i4derr</bpmn:incoming>
+      <bpmn:outgoing>Flow_1jt295b</bpmn:outgoing>
+      <bpmn:outgoing>Flow_0xzvtb0</bpmn:outgoing>
+    </bpmn:exclusiveGateway>
+    <bpmn:sequenceFlow id="Flow_0i4derr" sourceRef="Activity_1q2nr5z" targetRef="Gateway_1g83rvo" />
+    <bpmn:sequenceFlow id="Flow_1jt295b" sourceRef="Gateway_1g83rvo" targetRef="Activity_14k9ygk">
+      <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">${approve==true}</bpmn:conditionExpression>
+    </bpmn:sequenceFlow>
+    <bpmn:sequenceFlow id="Flow_0xzvtb0" sourceRef="Gateway_1g83rvo" targetRef="Event_17jhcwq">
+      <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">${approve==false}</bpmn:conditionExpression>
+    </bpmn:sequenceFlow>
+    <bpmn:intermediateCatchEvent id="Event_17jhcwq">
+      <bpmn:incoming>Flow_0xzvtb0</bpmn:incoming>
+      <bpmn:outgoing>Flow_1lgvdbc</bpmn:outgoing>
+      <bpmn:timerEventDefinition id="TimerEventDefinition_1t0l82w">
+        <bpmn:timeDuration xsi:type="bpmn:tFormalExpression">PT10S</bpmn:timeDuration>
+      </bpmn:timerEventDefinition>
+    </bpmn:intermediateCatchEvent>
+    <bpmn:sequenceFlow id="Flow_0ujqt52" sourceRef="StartNewProcess" targetRef="Activity_14k9ygk" />
+    <bpmn:sequenceFlow id="Flow_1pm502p" sourceRef="Event_1iffevg" targetRef="Activity_1q2nr5z" />
+    <bpmn:sequenceFlow id="Flow_1lgvdbc" sourceRef="Event_17jhcwq" targetRef="ToCheckExpirationOfContract" />
+    <bpmn:endEvent id="Event_0bl3i49">
+      <bpmn:incoming>Flow_1v23533</bpmn:incoming>
+    </bpmn:endEvent>
+    <bpmn:sequenceFlow id="Flow_1ut9nl2" sourceRef="Activity_14k9ygk" targetRef="Activity_1ax05h0" />
+    <bpmn:sequenceFlow id="Flow_056fi5v" sourceRef="Event_0t25xhl" targetRef="VMReviewTaskRedirectedToAdmin" />
+    <bpmn:sequenceFlow id="Flow_0ksit6d" sourceRef="Event_06vabml" targetRef="FinanceReviewTaskRedirectedToAdmin" />
+    <bpmn:sequenceFlow id="Flow_15qee1g" sourceRef="VMReviewTaskRedirectedToAdmin" targetRef="Activity_1ax05h0" />
+    <bpmn:sequenceFlow id="Flow_0eomj78" sourceRef="FinanceReviewTaskRedirectedToAdmin" targetRef="Activity_0086jem" />
+    <bpmn:userTask id="VMReviewTaskRedirectedToAdmin" camunda:assignee="contract">
+      <bpmn:incoming>Flow_056fi5v</bpmn:incoming>
+      <bpmn:outgoing>Flow_15qee1g</bpmn:outgoing>
+    </bpmn:userTask>
+    <bpmn:userTask id="FinanceReviewTaskRedirectedToAdmin" camunda:assignee="contract">
+      <bpmn:incoming>Flow_0ksit6d</bpmn:incoming>
+      <bpmn:outgoing>Flow_0eomj78</bpmn:outgoing>
+    </bpmn:userTask>
+    <bpmn:sequenceFlow id="Flow_1v23533" sourceRef="ToCheckExpirationOfContract" targetRef="Event_0bl3i49" />
+    <bpmn:userTask id="ToCheckExpirationOfContract" camunda:assignee="contract">
+      <bpmn:extensionElements>
+        <camunda:formData>
+          <camunda:formField id="End" label="End" type="string" defaultValue="Contract expired">
+            <camunda:validation>
+              <camunda:constraint name="readonly" />
+            </camunda:validation>
+          </camunda:formField>
+        </camunda:formData>
+      </bpmn:extensionElements>
+      <bpmn:incoming>Flow_1lgvdbc</bpmn:incoming>
+      <bpmn:outgoing>Flow_1v23533</bpmn:outgoing>
+    </bpmn:userTask>
+    <bpmn:textAnnotation id="TextAnnotation_1nzld1i">
+      <bpmn:text>waits here till the expiry date -1</bpmn:text>
+    </bpmn:textAnnotation>
+    <bpmn:association id="Association_16wcp79" sourceRef="Event_1iffevg" targetRef="TextAnnotation_1nzld1i" />
+    <bpmn:textAnnotation id="TextAnnotation_100kaoa">
+      <bpmn:text>10sec  timer</bpmn:text>
+    </bpmn:textAnnotation>
+    <bpmn:association id="Association_1soyio6" sourceRef="Event_17jhcwq" targetRef="TextAnnotation_100kaoa" />
+  </bpmn:process>
+  <bpmndi:BPMNDiagram id="BPMNDiagram_1">
+    <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="Start">
+      <bpmndi:BPMNShape id="_BPMNShape_StartEvent_2" bpmnElement="StartNewProcess">
+        <dc:Bounds x="152" y="162" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="169" y="335" width="8" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="BPMNShape_13plyyi" bpmnElement="Activity_14k9ygk">
+        <dc:Bounds x="290" y="140" width="100" height="80" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="BPMNShape_0juek09" bpmnElement="Activity_1ax05h0">
+        <dc:Bounds x="460" y="140" width="100" height="80" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_1gqb83e_di" bpmnElement="Activity_0086jem">
+        <dc:Bounds x="670" y="140" width="100" height="80" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Event_1vzpk19_di" bpmnElement="Event_1iffevg">
+        <dc:Bounds x="862" y="162" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_0vw004w_di" bpmnElement="VMReviewTaskRedirectedToAdmin">
+        <dc:Bounds x="450" y="290" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_1ki3yxi_di" bpmnElement="FinanceReviewTaskRedirectedToAdmin">
+        <dc:Bounds x="650" y="290" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="TextAnnotation_1nzld1i_di" bpmnElement="TextAnnotation_1nzld1i">
+        <dc:Bounds x="900" y="80" width="100" height="53" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="TextAnnotation_100kaoa_di" bpmnElement="TextAnnotation_100kaoa">
+        <dc:Bounds x="1180" y="90" width="100" height="30" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_0dthby0_di" bpmnElement="Activity_1q2nr5z">
+        <dc:Bounds x="920" y="140" width="100" height="80" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Gateway_1g83rvo_di" bpmnElement="Gateway_1g83rvo" isMarkerVisible="true">
+        <dc:Bounds x="1045" y="155" width="50" height="50" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Event_0zrl1sv_di" bpmnElement="Event_17jhcwq">
+        <dc:Bounds x="1142" y="162" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Event_0bl3i49_di" bpmnElement="Event_0bl3i49">
+        <dc:Bounds x="1332" y="162" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_0fmx5z6_di" bpmnElement="ToCheckExpirationOfContract">
+        <dc:Bounds x="1210" y="140" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="Association_1soyio6_di" bpmnElement="Association_1soyio6">
+        <di:waypoint x="1172" y="167" />
+        <di:waypoint x="1217" y="120" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="Event_0hy8vi7_di" bpmnElement="Event_06vabml">
+        <dc:Bounds x="542" y="202" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Event_008x5hz_di" bpmnElement="Event_0t25xhl">
+        <dc:Bounds x="352" y="202" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="Flow_1qfp16t_di" bpmnElement="Flow_1qfp16t">
+        <di:waypoint x="560" y="180" />
+        <di:waypoint x="670" y="180" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1w5jy6n_di" bpmnElement="Flow_1w5jy6n">
+        <di:waypoint x="770" y="180" />
+        <di:waypoint x="862" y="180" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0i4derr_di" bpmnElement="Flow_0i4derr">
+        <di:waypoint x="1020" y="180" />
+        <di:waypoint x="1045" y="180" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1jt295b_di" bpmnElement="Flow_1jt295b">
+        <di:waypoint x="1070" y="205" />
+        <di:waypoint x="1070" y="470" />
+        <di:waypoint x="310" y="470" />
+        <di:waypoint x="310" y="220" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0xzvtb0_di" bpmnElement="Flow_0xzvtb0">
+        <di:waypoint x="1095" y="180" />
+        <di:waypoint x="1142" y="180" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0ujqt52_di" bpmnElement="Flow_0ujqt52">
+        <di:waypoint x="188" y="180" />
+        <di:waypoint x="290" y="180" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1pm502p_di" bpmnElement="Flow_1pm502p">
+        <di:waypoint x="898" y="180" />
+        <di:waypoint x="920" y="180" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1lgvdbc_di" bpmnElement="Flow_1lgvdbc">
+        <di:waypoint x="1178" y="180" />
+        <di:waypoint x="1210" y="180" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1ut9nl2_di" bpmnElement="Flow_1ut9nl2">
+        <di:waypoint x="390" y="180" />
+        <di:waypoint x="460" y="180" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_056fi5v_di" bpmnElement="Flow_056fi5v">
+        <di:waypoint x="370" y="238" />
+        <di:waypoint x="370" y="330" />
+        <di:waypoint x="450" y="330" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0ksit6d_di" bpmnElement="Flow_0ksit6d">
+        <di:waypoint x="560" y="238" />
+        <di:waypoint x="560" y="330" />
+        <di:waypoint x="650" y="330" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_15qee1g_di" bpmnElement="Flow_15qee1g">
+        <di:waypoint x="500" y="290" />
+        <di:waypoint x="500" y="220" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0eomj78_di" bpmnElement="Flow_0eomj78">
+        <di:waypoint x="720" y="290" />
+        <di:waypoint x="720" y="220" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Association_16wcp79_di" bpmnElement="Association_16wcp79">
+        <di:waypoint x="891" y="166" />
+        <di:waypoint x="919" y="133" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1v23533_di" bpmnElement="Flow_1v23533">
+        <di:waypoint x="1310" y="180" />
+        <di:waypoint x="1332" y="180" />
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</bpmn:definitions>

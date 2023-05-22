@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:camunda="http://camunda.org/schema/1.0/bpmn" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:modeler="http://camunda.org/schema/modeler/1.0" id="Definitions_0lt1xwi" targetNamespace="http://bpmn.io/schema/bpmn" exporter="Camunda Modeler" exporterVersion="5.9.0" modeler:executionPlatform="Camunda Platform" modeler:executionPlatformVersion="7.18.0">
+  <bpmn:process id="template" isExecutable="true">
+    <bpmn:startEvent id="StartEvent_1">
+      <bpmn:outgoing>Flow_0um19cg</bpmn:outgoing>
+    </bpmn:startEvent>
+    <bpmn:sequenceFlow id="Flow_0um19cg" sourceRef="StartEvent_1" targetRef="techingvariable" />
+    <bpmn:endEvent id="Event_0y6mlaz">
+      <bpmn:incoming>Flow_103odmh</bpmn:incoming>
+    </bpmn:endEvent>
+    <bpmn:serviceTask id="techingvariable" name="worddoc" camunda:class="com.truviq.camunda.FetchDataToWordDocument">
+      <bpmn:incoming>Flow_0um19cg</bpmn:incoming>
+      <bpmn:outgoing>Flow_11rlgut</bpmn:outgoing>
+    </bpmn:serviceTask>
+    <bpmn:sequenceFlow id="Flow_103odmh" sourceRef="user" targetRef="Event_0y6mlaz" />
+    <bpmn:userTask id="user">
+      <bpmn:incoming>Flow_072pldb</bpmn:incoming>
+      <bpmn:outgoing>Flow_103odmh</bpmn:outgoing>
+    </bpmn:userTask>
+    <bpmn:sequenceFlow id="Flow_11rlgut" sourceRef="techingvariable" targetRef="pdf" />
+    <bpmn:sequenceFlow id="Flow_072pldb" sourceRef="pdf" targetRef="user" />
+    <bpmn:serviceTask id="pdf" name="PDF" camunda:class="com.truviq.camunda.Docx2PdfConversion">
+      <bpmn:incoming>Flow_11rlgut</bpmn:incoming>
+      <bpmn:outgoing>Flow_072pldb</bpmn:outgoing>
+    </bpmn:serviceTask>
+  </bpmn:process>
+  <bpmndi:BPMNDiagram id="BPMNDiagram_1">
+    <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="template">
+      <bpmndi:BPMNShape id="_BPMNShape_StartEvent_2" bpmnElement="StartEvent_1">
+        <dc:Bounds x="152" y="102" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Event_0y6mlaz_di" bpmnElement="Event_0y6mlaz">
+        <dc:Bounds x="822" y="102" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_097qr3v_di" bpmnElement="techingvariable">
+        <dc:Bounds x="240" y="80" width="100" height="80" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_1s15jic_di" bpmnElement="user">
+        <dc:Bounds x="640" y="80" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_03oibhi_di" bpmnElement="pdf">
+        <dc:Bounds x="410" y="80" width="100" height="80" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="Flow_0um19cg_di" bpmnElement="Flow_0um19cg">
+        <di:waypoint x="188" y="120" />
+        <di:waypoint x="240" y="120" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_103odmh_di" bpmnElement="Flow_103odmh">
+        <di:waypoint x="740" y="120" />
+        <di:waypoint x="822" y="120" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_11rlgut_di" bpmnElement="Flow_11rlgut">
+        <di:waypoint x="340" y="120" />
+        <di:waypoint x="410" y="120" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_072pldb_di" bpmnElement="Flow_072pldb">
+        <di:waypoint x="510" y="120" />
+        <di:waypoint x="640" y="120" />
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</bpmn:definitions>
