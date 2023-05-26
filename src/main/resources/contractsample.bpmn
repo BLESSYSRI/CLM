@@ -48,7 +48,7 @@
     <bpmn:boundaryEvent id="Event_0t25xhl" attachedToRef="Activity_14k9ygk">
       <bpmn:outgoing>Flow_056fi5v</bpmn:outgoing>
       <bpmn:timerEventDefinition id="TimerEventDefinition_0o0ymhz">
-        <bpmn:timeDuration xsi:type="bpmn:tFormalExpression">PT180S</bpmn:timeDuration>
+        <bpmn:timeDuration xsi:type="bpmn:tFormalExpression">PT240S</bpmn:timeDuration>
       </bpmn:timerEventDefinition>
     </bpmn:boundaryEvent>
     <bpmn:userTask id="Activity_1ax05h0" name="Finance Review" camunda:assignee="contract">
