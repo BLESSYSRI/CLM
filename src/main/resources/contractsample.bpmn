@@ -180,7 +180,7 @@
     <bpmn:sequenceFlow id="Flow_0ksit6d" sourceRef="Event_06vabml" targetRef="FinanceReviewTaskRedirectedToAdmin" />
     <bpmn:sequenceFlow id="Flow_15qee1g" sourceRef="VMReviewTaskRedirectedToAdmin" targetRef="Activity_1ax05h0" />
     <bpmn:sequenceFlow id="Flow_0eomj78" sourceRef="FinanceReviewTaskRedirectedToAdmin" targetRef="Activity_0086jem" />
-    <bpmn:userTask id="VMReviewTaskRedirectedToAdmin" name="Adminn" camunda:assignee="contract">
+    <bpmn:userTask id="VMReviewTaskRedirectedToAdmin" name="Adminnnnnn" camunda:assignee="contract">
       <bpmn:incoming>Flow_056fi5v</bpmn:incoming>
       <bpmn:outgoing>Flow_15qee1g</bpmn:outgoing>
     </bpmn:userTask>
