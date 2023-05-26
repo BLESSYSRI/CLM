@@ -1,6 +1,7 @@
 package com.truviq.contract;
 
 
+
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -12,7 +13,10 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import org.camunda.bpm.engine.delegate.DelegateExecution;
 import org.camunda.bpm.engine.delegate.JavaDelegate;
-public class Storedoc2Pdf implements JavaDelegate{
+public class storedatabase implements JavaDelegate{
+
+
+
 	public void execute(DelegateExecution execution) throws Exception {
         String filename = "D:\\temp\\Truviq2.docx"; // Replace with the name of your PDF file
         String base64Content = encodePDFToBase64(filename);

@@ -209,7 +209,7 @@
     </bpmn:serviceTask>
     <bpmn:sequenceFlow id="Flow_1o3ccec" sourceRef="template" targetRef="Activity_15uyvun" />
     <bpmn:sequenceFlow id="Flow_02lf2lh" sourceRef="Activity_15uyvun" targetRef="Activity_14k9ygk" />
-    <bpmn:serviceTask id="Activity_15uyvun" name="database" camunda:class="com.truviq.contract.Storedoc2Pdf">
+    <bpmn:serviceTask id="Activity_15uyvun" name="database" camunda:class="com.truviq.contract.storedatabase">
       <bpmn:incoming>Flow_1o3ccec</bpmn:incoming>
       <bpmn:outgoing>Flow_02lf2lh</bpmn:outgoing>
     </bpmn:serviceTask>
